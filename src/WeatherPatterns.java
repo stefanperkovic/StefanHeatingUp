@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * The class WeatherPatterns finds the longest span of days in which
  * each day’s temperature is higher than on the previous day in that sequence.
@@ -15,7 +17,25 @@ public class WeatherPatterns {
      */
     public static int longestWarmingTrend(int[] temperatures) {
 
-        
-        return 0;
+        ArrayList<Integer> temps = new ArrayList<Integer>();
+
+        for(int t : temperatures){
+
+            for (int i = 0; i < temps.size(); i++){
+
+
+                if (temps.get(i) >= t){
+
+
+                }
+
+
+            }
+
+        }
+
+
+        return temps.size();
+
     }
 }

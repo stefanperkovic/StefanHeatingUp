@@ -16,26 +16,35 @@ public class WeatherPatterns {
      * @return the longest run of days with increasing temperatures
      */
     public static int longestWarmingTrend(int[] temperatures) {
+        int n = temperatures.length;
 
-        ArrayList<Integer> temps = new ArrayList<Integer>();
+        if (n <= 1) {
+            return n;
+        }
 
-        for(int t : temperatures){
+        int[] dynamic = new int[n];
+        int maxLength = 1;
 
-            for (int i = 0; i < temps.size(); i++){
 
-
-                if (temps.get(i) >= t){
-
+        for (int i = 1; i < n; i++) {
+            for (int j = 0; j < i; j++) {
+                if (temperatures[i] > temperatures[j]) {
+                    if (dynamic[j] + 1 > dynamic[i]) {
+                        dynamic[i] = dynamic[j] + 1;
+                    }
 
                 }
-
-
             }
+
+            if (dynamic[i] > maxLength) {
+                maxLength = dynamic[i];
+            }
+
 
         }
 
 
-        return temps.size();
+        return maxLength;
 
     }
 }

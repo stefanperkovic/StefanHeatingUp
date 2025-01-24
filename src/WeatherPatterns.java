@@ -26,6 +26,10 @@ public class WeatherPatterns {
         int maxLength = 1;
 
 
+        for (int i = 0; i < n; i++) {
+            dynamic[i] = 1;
+        }
+
         for (int i = 1; i < n; i++) {
             for (int j = 0; j < i; j++) {
                 if (temperatures[i] > temperatures[j]) {
